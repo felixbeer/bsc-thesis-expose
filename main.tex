@@ -28,42 +28,47 @@
 \maketitle
 
 \section*{Motivation}
-Web administration interfaces of modern software systems are crucial for managing and maintaining the underlying data. These interfaces provide administrators with the necessary tools to create content, configure settings, troubleshoot issues and get insight into key performance metrics. The design and usability of these interfaces can significantly impact the efficiency and effectiveness of system management tasks.
+Content management systems (CMS) play a big role in enabling the creation, management, and distribution of digital content. These systems provide administrators with tools to draft and edit content, manage media assets, and monitor user engagement.
+However, traditional interfaces are often hard to understand for non-technical people due to general complexity or lack of intuitive design. This is especially the case for digital content creation workflows.
 
-AI agents, which in short are LLMs (Large Language Models) that can execute a predefined set of functions, have the potential to simplify or even automate many of the routine tasks performed by administrators.
+AI agents, which in short are LLMs (Large Language Models) that can execute a predefined set of functions, have the potential to reimagine these workflows.
+By giving the agents access to endpoints to upload images, manipulate text or create new pages, they could generate content on demand.
+Agents provide a more natural way of interacting — as a chat window for example — and could support authors of all technical levels in creating online content like blog posts or websites.
 
-% TODO: Maybe rewrite paragraphs
+The general concept of agents has been described in many different ways. The ReAct framework, introduced by \cite{yao_react_2023}, describes a method to include reasoning traces based on task results. This allows the model to dynamically plan, execute, and adjust actions based on real-time feedback.
 
-The concept of agents has been described in many different ways. The ReAct framework, introduced by \cite{yao_react_2023}, describes a method to include reasoning traces based on task results. This allows the model to dynamically plan, execute, and adjust actions based on real-time feedback.
-
-\cite{li_api-bank_2023} introduced API-Bank, which benchmarked performance of different commonly used models across 73 APIs. The result showed that GPT-4 \autocite{openai_gpt-4_2024} managed to execute 70\% of Plan/Retrieve/Call tasks correctly.
+\cite{li_api-bank_2023} introduced API-Bank, which benchmarked performance of different commonly used models across 73 APIs. The results showed that GPT-4 \autocite{openai_gpt-4_2024} successfully completed 70\% of tasks involving planning, retrieving information, and executing actions.
 
 \section*{Research Question}
-Can AI agents replace traditionally complex administration interfaces in content management systems by simplifying user interaction?
+Can AI agents replace traditionally complex digital content creation workflows in content management systems by simplifying user interaction?
 
 \section*{Concept}
 The practical part of this thesis will focus on the development of an AI agent that can be used via a chat interface.
-This AI agent will be built to integrate with an existing content management system, which allows administrators to manage resources such as blog posts, shop products, or online courses.
-Additionally, the agent should be implemented using the newly released Model Context Protocol \footnote{\url{https://www.anthropic.com/news/model-context-protocol}}, which would allow usage in a variety of different clients.
-To find out if the agent can actually simplify user interaction compared to the traditional interface, a user study will be conducted. The study would then take a set of features, such as:
+This AI agent will be built to integrate with an existing content management system, which allows administrators to manage resources such as web pages, blog posts, or online course content.
+The content of the CMS is formatted in a JSON-structure that is compatible with the Tiptap Rich-Text-Editor \footnote{\url{https://tiptap.dev/}} with the addition of “blocks” that provide a way to design and structure the web content.
+This data gets converted to HTML when displayed on the web.
+The main objective for the agent is therefore to generate a valid content JSON-object based on user input or existing content.
+
+To find out if the agent can actually simplify user interaction compared to the traditional interface, a user study will be conducted. The study would then take a set of interactions, such as:
+
 \begin{itemize}
-	\item Updating a product's price
-	\item Changing a blog post's hero image
-	\item Creating a new online-course structure (name, chapters, lessons)
+	\item Drafting a marketing email from a blog post
+	\item Create a new page with a specific given image
+	\item Updating an existing blog post's content with a new paragraph
 \end{itemize}
 
-The users will be asked to perform these tasks using both the traditional web interface and the AI agent. To keep the bias at a minimum, the tests will be performed in a counterbalanced order, so that half of the participants will start with the traditional interface and the other half with the AI agent. By measuring the time it takes to complete every task, but also if the user was able to successfully complete the task at all, it is possible to quantitatively compare if the AI agent is more efficient than the traditional interface.
+The users will be asked to perform these tasks using both the traditional web interface and the AI agent. To keep the bias at a minimum, the tests will be performed in a counterbalanced order, so that half of the participants will start with the traditional interface and the other half with the AI agent.
+By measuring the time it takes to complete every task, but also if the user was able to successfully complete the task at all, it is possible to quantitatively compare if the AI agent is more efficient than the traditional interface.
 Furthermore, it would make sense to include a survey like the well-established System Usability Scale (SUS) \autocite{brooke_sus_1995} to get an understanding of the user's satisfaction.
 
 \section*{Outline}
 This is a rough outline that will be refined during the research process.
-% TODO: Finish outline
+
 \begin{enumerate}
 	\item Introduction
 	      \begin{enumerate}
 		      \item Background and Motivation
 		      \item Problem Statement
-		      \item Methodology Overview
 	      \end{enumerate}
 	\item Theoretical Background
 	      \begin{enumerate}
@@ -76,7 +81,6 @@ This is a rough outline that will be refined during the research process.
 				                  \item Hallucination
 				                  \item Reasoning
 			                  \end{enumerate}
-			            \item Model Context Protocol (MCP)
 		            \end{enumerate}
 		      \item API Specification
 		            \begin{enumerate}
@@ -87,21 +91,27 @@ This is a rough outline that will be refined during the research process.
 	      \end{enumerate}
 	\item Concept and design
 	      \begin{enumerate}
-		      \item Integration methods with existing content management system
 		      \item Proposed features of the AI agents
-	      \end{enumerate}
-	\item Implementation
-	\item User Study
-	      \begin{enumerate}
-		      \item Evaluation Metrics
+		      \item User Study
 		            \begin{enumerate}
-			            \item Time Savings
-			            \item Task Completion
-			            \item User Satisfaction
+			            \item Target Group
+			            \item Tasks
+			            \item Evaluation Metrics
+			                  \begin{enumerate}
+				                  \item Time Savings
+				                  \item Task Completion
+				                  \item User Satisfaction
+			                  \end{enumerate}
 		            \end{enumerate}
 	      \end{enumerate}
+	\item Implementation
 	\item Discussion
-	\item Conclusions
+	      \begin{enumerate}
+		      \item User Study Results
+		      \item Comparison to existing solutions
+		      \item Limitations
+	      \end{enumerate}
+	\item Conclusion
 \end{enumerate}
 
 % nocite print the whole bibliography. Remove nocite to
@@ -113,15 +123,15 @@ This is a rough outline that will be refined during the research process.
 \section*{Schedule}
 
 \begin{itemize}
-	\item January 26th - Submission of exposé
-	\item February - Researching and testing suitable models and technologies
-	\item February 17th - Application for supervision
-	\item Early March - First meeting with supervisor
-	\item March - Writing theoretical part and agent implementation
-	\item Early April - User study and analysis
-	\item Mid-April - Second meeting with supervisor
-	\item Late April - Finalizing practical part
-	\item May 5th - Submission of final thesis
+	\item January 26th — Submission of exposé
+	\item February — Researching and testing suitable models and technologies
+	\item February 17th — Application for supervision
+	\item Early March — First meeting with supervisor
+	\item March — Writing theoretical part and agent implementation
+	\item Early April — User study and analysis
+	\item Mid-April — Second meeting with supervisor
+	\item Late April — Finalizing practical part
+	\item May 5th — Submission of final thesis
 \end{itemize}
 
 \section*{Supervisor}

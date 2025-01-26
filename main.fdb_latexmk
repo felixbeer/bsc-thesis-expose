@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1737737374.34035 "main.bcf" "main.bbl" "main" 1737766505.34697 0
+["biber main"] 1737931563.4964 "main.bcf" "main.bbl" "main" 1737933710.84512 0
   "Bibliography.bib" 1737737323.7672 19425 ccb5198bc656062244a90b81900958d5 ""
-  "main.bcf" 1737766505.2944 203650 5f8e3229062a07395cd6c12b3fd23bec "pdflatex"
+  "main.bcf" 1737933710.78907 203650 5f8e3229062a07395cd6c12b3fd23bec "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1737766504.2272 "/Users/felix/Development/FH/bachelor-thesis/bsc-thesis-latex-expose/main.tex" "main.pdf" "main" 1737766505.3474 0
-  "/Users/felix/Development/FH/bachelor-thesis/bsc-thesis-latex-expose/main.tex" 1737766503.94952 5968 295dbc9361207e4fbde240d3e4416456 ""
+["pdflatex"] 1737933709.71395 "/Users/felix/Development/FH/bachelor-thesis/bsc-thesis-latex-expose/main.tex" "main.pdf" "main" 1737933710.84557 0
+  "/Users/felix/Development/FH/bachelor-thesis/bsc-thesis-latex-expose/main.tex" 1737933709.44585 6654 4550d5af87537e97220280ff67130785 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -106,11 +106,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710266664 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1715155559 8221448 096aab6adaf2b307d42109e3f1fe83fe ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "_Configuration.tex" 1737639077.46945 252 1f63f49ab1702e037f4548342d25dbab ""
-  "main.aux" 1737766505.29046 1411 70d41eae7ff3faffc80bb2f0a978f8d2 "pdflatex"
-  "main.bbl" 1737737377.66785 100690 ca7f066f8b5ec50f39cfc8753eb27a7d "biber main"
-  "main.run.xml" 1737766505.29506 2539 e7d3e124fe4220c8915b4546aac67335 "pdflatex"
-  "main.tex" 1737766503.94952 5968 295dbc9361207e4fbde240d3e4416456 ""
+  "_Configuration.tex" 1737930709.29994 287 2bf95c5c9041b03755635639d5668e8a ""
+  "main.aux" 1737933710.78476 1434 e160a1b03a81e1b8bee2661a72865b6a "pdflatex"
+  "main.bbl" 1737931566.91866 100690 ca7f066f8b5ec50f39cfc8753eb27a7d "biber main"
+  "main.run.xml" 1737933710.78979 2539 365c88934137e178fbf8f469dfa94128 "pdflatex"
+  "main.tex" 1737933709.44585 6654 4550d5af87537e97220280ff67130785 ""
   (generated)
   "main.aux"
   "main.bcf"
