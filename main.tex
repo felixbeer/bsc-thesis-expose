@@ -27,46 +27,80 @@
 
 \maketitle
 
+\section*{Motivation}
+Web administration interfaces of modern software systems are crucial for managing and maintaining the underlying data. These interfaces provide administrators with the necessary tools to create content, configure settings, troubleshoot issues and get insight into key performance metrics. The design and usability of these interfaces can significantly impact the efficiency and effectiveness of system management tasks.
+
+AI agents, which in short are LLMs (Large Language Models) that can execute a predefined set of functions, have the potential to simplify or even automate many of the routine tasks performed by administrators.
+
+% TODO: Maybe rewrite paragraphs
+
+The concept of agents has been described in many different ways. The ReAct framework, introduced by \cite{yao_react_2023}, describes a method to include reasoning traces based on task results. This allows the model to dynamically plan, execute, and adjust actions based on real-time feedback.
+
+\cite{li_api-bank_2023} introduced API-Bank, which benchmarked performance of different commonly used models across 73 APIs. The result showed that GPT-4 \autocite{openai_gpt-4_2024} managed to execute 70\% of Plan/Retrieve/Call tasks correctly.
+
+\section*{Research Question}
+Can AI agents replace traditionally complex administration interfaces in content management systems by simplifying user interaction?
+
 \section*{Concept}
+The practical part of this thesis will focus on the development of an AI agent that can be used via a chat interface.
+This AI agent will be built to integrate with an existing content management system, which allows administrators to manage resources such as blog posts, shop products, or online courses.
+Additionally, the agent should be implemented using the newly released Model Context Protocol \footnote{\url{https://www.anthropic.com/news/model-context-protocol}}, which would allow usage in a variety of different clients.
+To find out if the agent can actually simplify user interaction compared to the traditional interface, a user study will be conducted. The study would then take a set of features, such as:
+\begin{itemize}
+	\item Updating a product's price
+	\item Changing a blog post's hero image
+	\item Creating a new online-course structure (name, chapters, lessons)
+\end{itemize}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua \autocite[]{McConnell:2004:CCS:1096143}.
-
-\textcite[]{Vandevoorde:2002} defined at vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-If you mention Web pages that are not proper scientific sources, just put the URL in a footnote, e.g. documentation for \LaTeX\footnote{\url{http://en.wikibooks.org/wiki/LaTeX}}
-or when refering to an online service like  sharelatex\footnote{\url{https://de.sharelatex.com/}}.
-
-
-% Wörtliches Zitat:
-% select proper language!
-% \selectlanguage{ngerman}
-\selectlanguage{english}
-\begin{quote}
-``Erwin Unruh discovered that templates can be used to compute
-something at compile time. [...] The intriguing part of this exercise, however, was that the production of the prime numbers was performed by the compiler during the compilation process and not at run time.''
-\autocite[305]{Vandevoorde:2002}
-\end{quote}
-%select English again
-\selectlanguage{english}
-
-\textcite[]{Vandevoorde:2002} first introduced Lorem ipsum, and definined it as dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet 
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Different methods have been applied to solve this particular problem \autocite[]{McConnell:2004:CCS:1096143,Vandevoorde:2002}. 
-
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet .
-
-
+The users will be asked to perform these tasks using both the traditional web interface and the AI agent. To keep the bias at a minimum, the tests will be performed in a counterbalanced order, so that half of the participants will start with the traditional interface and the other half with the AI agent. By measuring the time it takes to complete every task, but also if the user was able to successfully complete the task at all, it is possible to quantitatively compare if the AI agent is more efficient than the traditional interface.
+Furthermore, it would make sense to include a survey like the well-established System Usability Scale (SUS) \autocite{brooke_sus_1995} to get an understanding of the user's satisfaction.
 
 \section*{Outline}
-
+This is a rough outline that will be refined during the research process.
+% TODO: Finish outline
 \begin{enumerate}
 	\item Introduction
-	\item Chapter
-	\begin{enumerate}
-		\item Subchapter
-		\item Subchapter
-	\end{enumerate}
-	\item Other Chapter
+	      \begin{enumerate}
+		      \item Background and Motivation
+		      \item Problem Statement
+		      \item Methodology Overview
+	      \end{enumerate}
+	\item Theoretical Background
+	      \begin{enumerate}
+		      \item AI Agents
+		            \begin{enumerate}
+			            \item Large Language Models (LLMs)
+			            \item Capabilities and Limitations
+			                  \begin{enumerate}
+				                  \item Function Calling
+				                  \item Hallucination
+				                  \item Reasoning
+			                  \end{enumerate}
+			            \item Model Context Protocol (MCP)
+		            \end{enumerate}
+		      \item API Specification
+		            \begin{enumerate}
+			            \item OpenAPI
+			            \item GraphQL
+			            \item Internal Function Calling
+		            \end{enumerate}
+	      \end{enumerate}
+	\item Concept and design
+	      \begin{enumerate}
+		      \item Integration methods with existing content management system
+		      \item Proposed features of the AI agents
+	      \end{enumerate}
+	\item Implementation
+	\item User Study
+	      \begin{enumerate}
+		      \item Evaluation Metrics
+		            \begin{enumerate}
+			            \item Time Savings
+			            \item Task Completion
+			            \item User Satisfaction
+		            \end{enumerate}
+	      \end{enumerate}
+	\item Discussion
 	\item Conclusions
 \end{enumerate}
 
@@ -79,20 +113,18 @@ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
 \section*{Schedule}
 
 \begin{itemize}
-	\item December 17th - hand in this exposé
-	\item ... procrastinate, procrastinate, procrastinate ....
-	\item April 22th - quickly scan my few sources and cobble something together
-	\item April 23th - submission
+	\item January 26th - Submission of exposé
+	\item February - Researching and testing suitable models and technologies
+	\item February 17th - Application for supervision
+	\item Early March - First meeting with supervisor
+	\item March - Writing theoretical part and agent implementation
+	\item Early April - User study and analysis
+	\item Mid-April - Second meeting with supervisor
+	\item Late April - Finalizing practical part
+	\item May 5th - Submission of final thesis
 \end{itemize}
 
 \section*{Supervisor}
-
-Have you discussed this exposé with a potential supervisor?
-What is the status?
-
-
-
-
-
+Radomir Dinic, MSc
 
 \end{document}
